@@ -1,3 +1,4 @@
+# Shamelessly stolen from http://github.com/ryanb/dotfiles/blob/master/Rakefile
 require 'rake'
 require 'erb'
 
