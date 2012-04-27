@@ -1,0 +1,5 @@
+# *nix aliases
+alias ssh="ssh -lbhornseth"
+alias ll="ls -l"
+alias la="ls -a"
+
