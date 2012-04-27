@@ -5,7 +5,11 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" we're using pathogen as a git submodule, so it's not
+" necessarily where it should be. load it, then call it
+source ~/.vim/autoload/pathogen.vim/autoload/pathogen.vim
 call pathogen#infect()
+
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
