@@ -20,6 +20,14 @@ Environment
 I hack on a Gentoo Linux box during the day, and a Macbook Pro at night, so the files 
 in here should work with the default tools on either setup.
 
+VIM
+---
+Vim uses a heavily-customized .vimrc file with snippets from all the hell over. It 
+also uses the [JellyBeans](http://www.vim.org/scripts/script.php?script_id=2555) theme
+and ends up looking something like this:
+
+![Vim](http://i.imgur.com/ckrIP.png)
+
 moar_info?
 ----------
 Soon.
