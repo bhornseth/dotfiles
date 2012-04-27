@@ -8,6 +8,8 @@ Installation
 <pre>
 git clone git@github.com:bhornseth/dotfiles.git ~/.dotfiles
 cd !$
+git submodule init
+git submodule update
 rake install
 </pre>
 
