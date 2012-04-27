@@ -43,6 +43,7 @@ endif
   highlight LineNr ctermfg=8 ctermbg=234
   highlight StatusLine ctermbg=231 ctermfg=236
   highlight CursorLine cterm=NONE ctermbg=235
+  set statusline=\|b%n\|\ %t\ %m\ %y\ %=Line\ %l,%c/%L\ \  
 " }
 
 
