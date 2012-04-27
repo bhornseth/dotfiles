@@ -22,8 +22,8 @@ endif
 
 " General {
   filetype plugin indent on  " load filetype plugins/indent settings
-  set autoindent             " copy the indentation from the previous line. doesn't
-                             " interfere with the above
+  set autoindent             " copy the indentation from the previous 
+                             " line. doesn't interfere with the above
   set directory=~/.vim/tmp   " where to put .swp files
   set hidden                 " change buffers without saving 
   set incsearch              " turn on find-as-you-type completion
@@ -52,8 +52,8 @@ endif
   "                  |    |   |   `------------------- file type (e.g. ruby)
   "                  |    |   `----------------------- modified
   "                  |    `--------------------------- file name
-  "                  `--------------------------------- buffer number
-  set colorscheme xoria256 
+  "                  `--------------------------------- buffer number (leading 0)
+  colorscheme jellybeans
 " }
 
 
