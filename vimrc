@@ -19,7 +19,6 @@ endif
   filetype plugin indent on  " load filetype plugins/indent settings
   set directory=~/.vim/tmp   " where to put .swp files
   set hidden                 " change buffers without saving 
-  set list                   " show real tabs, because I don't want them
   set incsearch              " turn on find-as-you-type completion
   set ignorecase             " ignore case when searching
   set smartcase              " but use case-sensitive searching if the search 
@@ -32,10 +31,6 @@ endif
   set ruler	        " show the cursor position all the time
   set number        " line numbers are cool
   set numberwidth=3 " 
-
-  colorscheme vividchalk
-  highlight NonText guibg=#060606
-  highlight Folded  guibg=#0A0A0A guifg=#9090D0
 " }
 
 
