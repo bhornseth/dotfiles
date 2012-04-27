@@ -22,6 +22,8 @@ endif
 
 " General {
   filetype plugin indent on  " load filetype plugins/indent settings
+  set autoindent             " copy the indentation from the previous line. doesn't
+                             " interfere with the above
   set directory=~/.vim/tmp   " where to put .swp files
   set hidden                 " change buffers without saving 
   set incsearch              " turn on find-as-you-type completion
@@ -44,6 +46,13 @@ endif
   highlight StatusLine ctermbg=231 ctermfg=236
   highlight CursorLine cterm=NONE ctermbg=235
   set statusline=\|b%n\|\ %t\ %m\ %y\ %=Line\ %l,%c/%L\ \  
+  "                  |     |   |   |           |  |  `- total lines
+  "                  |     |   |   |           |  `---- current column number
+  "                  |     |   |   |           `------- current line number
+  "                  |     |   |   `------------------- file type (e.g. ruby)
+  "                  |     |   `----------------------- modified
+  "                  |     `--------------------------- file name
+  "                  `--------------------------------- buffer number
 " }
 
 
