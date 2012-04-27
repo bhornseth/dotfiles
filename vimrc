@@ -35,7 +35,8 @@ endif
   set bg=dark       " brogrammers like thier editors light-on-dark
   set ruler	        " show the cursor position all the time
   set number        " line numbers are cool
-  set numberwidth=3 " 
+  set numberwidth=4 " 
+  highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkGray gui=NONE guifg=DarkGrey guibg=NONE
 " }
 
 
@@ -49,10 +50,10 @@ endif
 
 
 " Ruby {
-  au BufNewFile,BufRead *.erb    setf eruby
+  au BufNewFile,BufRead *.erb              setf eruby
   au BufRead,BufNewFile *.rb,*.rhtml,*.erb set shiftwidth=2
   au BufRead,BufNewFile *.rb,*.rhtml,*.erb set softtabstop=2
-  au BufRead,BUfNewFile Gemfile set filetype=Gemfile
+  au BufRead,BUfNewFile Gemfile            set filetype=Gemfile
 " }
 
 
