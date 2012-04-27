@@ -45,12 +45,12 @@ endif
   highlight LineNr ctermfg=8 ctermbg=234
   highlight StatusLine ctermbg=231 ctermfg=236
   highlight CursorLine cterm=NONE ctermbg=235
-  set statusline=[%02n]\ %t\ %m\ %y\ %=%l,%c/%L\ \ 
-  "                  |    |   |   |    |   |  `- total lines
-  "                  |    |   |   |    |   `---- current column number
-  "                  |    |   |   |    `------- current line number
-  "                  |    |   |   `------------------- file type (e.g. ruby)
-  "                  |    |   `----------------------- modified
+  set statusline=[%02n]\ %t\ %y%m\ %=%l,%c/%L\ \ 
+  "                  |    |   | |    |   |  `- total lines
+  "                  |    |   | |    |   `---- current column number
+  "                  |    |   | |    `------- current line number
+  "                  |    |   | `--------------------- modified 
+  "                  |    |   `----------------------- file type (e.g. ruby)
   "                  |    `--------------------------- file name
   "                  `--------------------------------- buffer number (leading 0)
   colorscheme jellybeans
