@@ -32,11 +32,17 @@ endif
 " }
 
 " Visual Stuffs {
+  set t_Co=256      " terminal supports 256 colors. Can't imgagine how it wouldn't
   set bg=dark       " brogrammers like thier editors light-on-dark
   set ruler	        " show the cursor position all the time
+  set cursorline    " highlight the current line
   set number        " line numbers are cool
-  set numberwidth=4 " 
-  highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=DarkGray gui=NONE guifg=DarkGrey guibg=NONE
+  set numberwidth=4 " line number gutter width 
+  set showtabline=2 " always show tablines in gvim, but not vim
+  set laststatus=2
+  highlight LineNr ctermfg=8 ctermbg=234
+  highlight StatusLine ctermbg=231 ctermfg=236
+  highlight CursorLine cterm=NONE ctermbg=235
 " }
 
 
