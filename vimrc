@@ -44,8 +44,10 @@ endif
 
 
 " Ruby {
-  au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
-  au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
+  au BufNewFile,BufRead *.erb    setf eruby
+  au BufRead,BufNewFile *.rb,*.rhtml,*.erb set shiftwidth=2
+  au BufRead,BufNewFile *.rb,*.rhtml,*.erb set softtabstop=2
+  au BufRead,BUfNewFile Gemfile set filetype=Gemfile
 " }
 
 
@@ -58,12 +60,3 @@ endif
 " experments & such
 set nowrap         " switch wrap off for everything
 set showcmd        " display incomplete commands
-
-
-
-
-
-
-
-
-
