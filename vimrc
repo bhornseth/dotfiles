@@ -45,14 +45,15 @@ endif
   highlight LineNr ctermfg=8 ctermbg=234
   highlight StatusLine ctermbg=231 ctermfg=236
   highlight CursorLine cterm=NONE ctermbg=235
-  set statusline=\|b%n\|\ %t\ %m\ %y\ %=Line\ %l,%c/%L\ \  
-  "                  |     |   |   |           |  |  `- total lines
-  "                  |     |   |   |           |  `---- current column number
-  "                  |     |   |   |           `------- current line number
-  "                  |     |   |   `------------------- file type (e.g. ruby)
-  "                  |     |   `----------------------- modified
-  "                  |     `--------------------------- file name
+  set statusline=[%02n]\ %t\ %m\ %y\ %=%l,%c/%L\ \ 
+  "                  |    |   |   |    |   |  `- total lines
+  "                  |    |   |   |    |   `---- current column number
+  "                  |    |   |   |    `------- current line number
+  "                  |    |   |   `------------------- file type (e.g. ruby)
+  "                  |    |   `----------------------- modified
+  "                  |    `--------------------------- file name
   "                  `--------------------------------- buffer number
+  set colorscheme xoria256 
 " }
 
 
@@ -73,12 +74,5 @@ endif
 " }
 
 
-
-
-
-
-
-
 " experments & such
 set nowrap         " switch wrap off for everything
-set showcmd        " display incomplete commands
