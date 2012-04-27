@@ -5,6 +5,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+call pathogen#infect()
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
