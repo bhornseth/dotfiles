@@ -31,6 +31,8 @@ endif
   set smartcase              " but use case-sensitive searching if the search 
   set nobackup               " no backup files (~)
   set nowritebackup          " also no backup files
+  set encoding=utf-8
+  set termencoding=utf-8
 " }
 
 " Visual Stuffs {
