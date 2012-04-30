@@ -75,6 +75,10 @@ endif
   au BufRead,BUfNewFile Gemfile            set filetype=Gemfile
 " }
 
+" Key mappings {
+  map <F5> :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
+  map <F4> :set nu!<bar>set nu?<CR>    " toggle line numbers on F4, useful when you need to copy text w/ mouse
+" } 
 
 " experments & such
 set nowrap         " switch wrap off for everything
