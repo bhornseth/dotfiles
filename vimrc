@@ -93,3 +93,10 @@ endif
 
 " experments & such
 "set nowrap         " switch wrap off for everything
+set splitbelow    " new horizontal splits show up on the bottom
+set splitright    " new vert splits show up on the rhs
+
+" NERDTree tweaks {
+  let NERDTreeQuitOnOpen = 1                        " Close the tree view when we open a file
+  autocmd vimenter * if !argc() | NERDTree | endif  " open NERDTree if no files were specified
+" }
