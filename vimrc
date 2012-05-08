@@ -36,7 +36,6 @@ endif
 " }
 
 " Visual Stuffs {
-  set t_Co=256      " terminal supports 256 colors. Can't imgagine how it wouldn't
   set bg=dark       " brogrammers like thier editors light-on-dark
   set ruler	        " show the cursor position all the time
   set cursorline    " highlight the current line
@@ -44,9 +43,22 @@ endif
   set numberwidth=4 " line number gutter width 
   set showtabline=2 " always show tablines in gvim, but not vim
   set laststatus=2
-  highlight LineNr ctermfg=8 ctermbg=234
-  highlight StatusLine ctermbg=231 ctermfg=236
-  highlight CursorLine cterm=NONE ctermbg=235
+
+  " if you try to use a dumb terminal, you're gonna have a bad time
+  if &t_Co > 2 || has("gui_running")
+    " well fuck. at least we have this.
+    syntax on
+  endif
+
+  " less eye melting, more awesome
+  if &t_Co >= 256 || has("gui_running")
+    highlight LineNr ctermfg=8 ctermbg=234
+    highlight StatusLine ctermbg=231 ctermfg=236
+    highlight CursorLine cterm=NONE ctermbg=235
+    colorscheme jellybeans
+  endif
+
+
   set statusline=[%02n]\ %t\ %y%m\ %=%l,%c/%L\ \ 
   "                  |    |   | |    |   |  `- total lines
   "                  |    |   | |    |   `---- current column number
@@ -55,7 +67,6 @@ endif
   "                  |    |   `----------------------- file type (e.g. ruby)
   "                  |    `--------------------------- file name
   "                  `--------------------------------- buffer number (leading 0)
-  colorscheme jellybeans
 " }
 
 
@@ -81,4 +92,4 @@ endif
 " } 
 
 " experments & such
-set nowrap         " switch wrap off for everything
+"set nowrap         " switch wrap off for everything
