@@ -97,6 +97,15 @@ endif
 " set splitright    " new vert splits show up on the rhs
 
 " NERDTree tweaks {
-  let NERDTreeQuitOnOpen = 1                        " Close the tree view when we open a file
-  autocmd vimenter * if !argc() | NERDTree | endif  " open NERDTree if no files were specified
+  "let NERDTreeQuitOnOpen = 1                        " Close the tree view when we open a file
+  "autocmd vimenter * if !argc() | NERDTree | endif  " open NERDTree if no files were specified
+  nmap <silent> ,nt :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 " }
+
+" Keep text selected after indent
+vnoremap < <gv 
+vnoremap > >gv 
+
+" tab switching
+nmap <silent> ,f :tabn<CR>
+nmap <silent> ,d :tabp<CR>
