@@ -109,3 +109,10 @@ vnoremap > >gv
 " tab switching
 nmap <silent> ,f :tabn<CR>
 nmap <silent> ,d :tabp<CR>
+
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
+
+imap <Tab> <C-P> " remap tab completion
