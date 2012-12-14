@@ -28,6 +28,11 @@ and ends up looking something like this:
 
 ![Vim](http://i.imgur.com/ckrIP.png)
 
+### Adding pathogen modules
+Add the repo as a submodule in vim/bundle:
+
+    git submodule add git://github.com/some/vim-repo.git vim/bundle/vim-repo
+
 moar_info?
 ----------
 Soon.
