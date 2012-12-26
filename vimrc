@@ -116,3 +116,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 imap <Tab> <C-P> " remap tab completion
+
+" rails test shortcuts
+map <silent> ,tt :! rake test:units TEST=%<CR>
+map <silent> ,ft :! rake test:functionals TEST=%<CR>
