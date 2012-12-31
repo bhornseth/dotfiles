@@ -56,6 +56,8 @@ endif
     highlight StatusLine ctermbg=231 ctermfg=236
     highlight CursorLine cterm=NONE ctermbg=235
     colorscheme jellybeans
+    set colorcolumn=81
+    highlight ColorColumn cterm=NONE ctermbg=236
   endif
 
 
