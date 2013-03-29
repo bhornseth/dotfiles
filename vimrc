@@ -56,7 +56,12 @@ endif
     highlight StatusLine ctermbg=231 ctermfg=236
     highlight CursorLine cterm=NONE ctermbg=235
     colorscheme jellybeans
-    set colorcolumn=81
+    if exists('+colorcolumn')
+      set colorcolumn=81
+    else
+      highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+      match OverLength /\%81v.\+/
+    end
     highlight ColorColumn cterm=NONE ctermbg=236
   endif
 
