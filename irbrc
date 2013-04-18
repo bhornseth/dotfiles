@@ -35,3 +35,8 @@ if defined?(Wirble)
   # set the colors used by Wirble
   Wirble::Colorize.colors = colors
 end
+
+
+if defined?(SparkApi)
+  include SparkApi::Models
+end
