@@ -56,6 +56,13 @@ endif
     highlight StatusLine ctermbg=231 ctermfg=236
     highlight CursorLine cterm=NONE ctermbg=235
     colorscheme jellybeans
+    if exists('+colorcolumn')
+      set colorcolumn=81
+    else
+      highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+      match OverLength /\%81v.\+/
+    end
+    highlight ColorColumn cterm=NONE ctermbg=236
   endif
 
 
@@ -116,3 +123,7 @@ map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
 imap <Tab> <C-P> " remap tab completion
+
+" rails test shortcuts
+map <silent> ,tt :! rake test:units TEST=%<CR>
+map <silent> ,ft :! rake test:functionals TEST=%<CR>
