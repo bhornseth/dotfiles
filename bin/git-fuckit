@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+# git-fuckit - throw away all this shit
+git reset --hard HEAD

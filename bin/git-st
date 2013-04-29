@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+# gs - shorthand git status
+git status --short --branch
