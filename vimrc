@@ -36,13 +36,15 @@ endif
 " }
 
 " Visual Stuffs {
-  set bg=dark       " brogrammers like thier editors light-on-dark
-  set ruler	        " show the cursor position all the time
-  set cursorline    " highlight the current line
-  set number        " line numbers are cool
-  set numberwidth=4 " line number gutter width 
-  set showtabline=2 " always show tablines in gvim, but not vim
+  set bg=dark                   " brogrammers like thier editors light-on-dark
+  set ruler                         " show the cursor position all the time
+  set cursorline                " highlight the current line
+  set number                    " line numbers are cool
+  set numberwidth=4             " line number gutter width 
+  set showtabline=2             " always show tablines in gvim, but not vim
   set laststatus=2
+  set list                      " show invisible crap by default
+  set listchars=tab:▸\ ,eol:¬   " slightly less annoying invisible chars
 
   " if you try to use a dumb terminal, you're gonna have a bad time
   if &t_Co > 2 || has("gui_running")
@@ -78,11 +80,11 @@ endif
 
 
 " Text Formatting {
-  set expandtab       " no real tabs
-  set shiftwidth=2    " autoindent amount when using cindent / >> / <<
-  set shiftround      " when at 3 spaces and I tab, go to 4, not 5
-  set softtabstop=2   " when hitting tab or backspace, how many spaces a tab should be
-  set tabstop=8       " actual tabs are 8
+  set expandtab      " no real tabs
+  set shiftwidth=2   " autoindent amount when using cindent / >> / <<
+  set shiftround     " when at 3 spaces and I tab, go to 4, not 5
+  set softtabstop=2  " when hitting tab or backspace, how many spaces a tab should be
+  set tabstop=8      " actual tabs are 8
 " }
 
 
@@ -94,8 +96,10 @@ endif
 " }
 
 " Key mappings {
-  map <F5> :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
-  map <F4> :set nu!<bar>set nu?<CR>    " toggle line numbers on F4, useful when you need to copy text w/ mouse
+  let mapleader=","                    " remap leader from \ to ,
+  map <leader>h :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
+  map <leader>n :set nu!<bar>set nu?<CR>    " toggle line numbers on F4, useful when you need to copy text w/ mouse
+  nmap <leader>l :set list!<CR>        " Toggle Show Invisible stuff 
 " } 
 
 " experments & such
