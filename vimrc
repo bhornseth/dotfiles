@@ -113,6 +113,13 @@ endif
   nmap <silent> ,nt :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 " }
 
+" Gist.vim settings {
+  let g:gist_detect_filetype = 1                           " set filetype automatically
+  let g:gist_clip_command = 'xclip -selection clipboard'   " copy to clipbaord after gist
+  let g:gist_show_privates = 1                             " show private with -l
+  let g:gist_post_private = 1                              " post private by default
+" }
+
 " Keep text selected after indent
 vnoremap < <gv 
 vnoremap > >gv 
