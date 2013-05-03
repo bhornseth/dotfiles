@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+# git-ctag re-tag the current repository
+. .git/hooks/ctags

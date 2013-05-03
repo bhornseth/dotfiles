@@ -96,15 +96,15 @@ endif
 " }
 
 " Key mappings {
-  let mapleader=","                    " remap leader from \ to ,
+  let mapleader=","                         " remap leader from \ to ,
   map <leader>h :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
   map <leader>n :set nu!<bar>set nu?<CR>    " toggle line numbers on F4, useful when you need to copy text w/ mouse
-  nmap <leader>l :set list!<CR>        " Toggle Show Invisible stuff 
+  nmap <leader>l :set list!<CR>             " Toggle Show Invisible stuff 
 " } 
 
 " experments & such
-"set nowrap         " switch wrap off for everything
-" set splitbelow    " new horizontal splits show up on the bottom
+  set splitbelow    " new horizontal splits show up on the bottom
+" set nowrap         " switch wrap off for everything
 " set splitright    " new vert splits show up on the rhs
 
 " NERDTree tweaks {
@@ -115,7 +115,11 @@ endif
 
 " Gist.vim settings {
   let g:gist_detect_filetype = 1                           " set filetype automatically
-  let g:gist_clip_command = 'xclip -selection clipboard'   " copy to clipbaord after gist
+  if has('unix')
+    let g:gist_clip_command = 'xclip -selection clipboard'   " copy to clipbaord after gist
+  elseif has('mac')
+    let g:gist_clip_command = 'pbcopy'
+  end
   let g:gist_show_privates = 1                             " show private with -l
   let g:gist_post_private = 1                              " post private by default
 " }
