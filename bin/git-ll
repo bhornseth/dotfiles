@@ -2,6 +2,7 @@
 #
 # git-ll - list of commits with files changed
 git log \
-  --pretty=format:"%C(magenta)%h%Creset %s %C(cyan) [%cn] %Cred%d" \
+  --pretty=format:"%C(magenta)%h %C(green)%ad%Creset - %s %C(cyan) [%cn] %Cred%d" \
   --decorate \
-  --stat
+  --stat \
+  --date=short
