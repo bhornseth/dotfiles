@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# git-ll - list of commits with files changed
+git log \
+  --pretty=format:"%C(magenta)%h%Creset %s %C(cyan) [%cn] %Cred%d" \
+  --decorate \
+  --stat

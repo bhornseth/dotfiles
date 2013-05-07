@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# git-ls - short & sweet list of commits
+git log \
+  --pretty=format:"%C(magenta)%h%Creset %s %C(cyan) [%cn] %Cred%d" \
+  --decorate
