@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Undo the last commit, but keeps the changes
+
+git commit --amend -C HEAD

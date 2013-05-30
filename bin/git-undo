@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Undo the last commit, but keeps the changes
+
+git reset --soft HEAD^
