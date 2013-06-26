@@ -142,3 +142,9 @@ imap <Tab> <C-P> " remap tab completion
 " rails test shortcuts
 map <silent> ,tt :! rake test:units TEST=%<CR>
 map <silent> ,ft :! rake test:functionals TEST=%<CR>
+
+
+" Load any machin-local settings
+if filereadable(glob("~/.vimrc-local"))
+  source ~/.vimrc-local
+endif
