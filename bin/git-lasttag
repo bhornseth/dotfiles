@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# git-lasttag - lists the most recent tag
+
+git for-each-ref \
+  --sort=-taggerdate \
+  --format '%(refname)' \
+  refs/tags \
+  --count=1 \
+  | sed -e 's/refs\/tags\///'
