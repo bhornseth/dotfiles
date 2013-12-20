@@ -60,9 +60,6 @@ endif
     colorscheme jellybeans
     if exists('+colorcolumn')
       set colorcolumn=81
-    else
-      highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-      match OverLength /\%81v.\+/
     end
     highlight ColorColumn cterm=NONE ctermbg=236
   endif
@@ -94,7 +91,7 @@ endif
   au BufRead,BufNewFile *.rb,*.rhtml,*.erb set softtabstop=2
   au BufRead,BUfNewFile Gemfile            set filetype=Gemfile
 " }
-
+"
 " Key mappings {
   let mapleader=","                         " remap leader from \ to ,
   map <leader>h :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
@@ -129,7 +126,7 @@ vnoremap < <gv
 vnoremap > >gv 
 
 " tab switching
-nmap <silent> ,f :tabn<CR>
+nmap <silent> ,g :tabn<CR>
 nmap <silent> ,d :tabp<CR>
 
 map <C-k> <C-w><Up>
