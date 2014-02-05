@@ -15,3 +15,6 @@ export LS_COLORS="${LS_COLORS}:di=01;34"
 
 # Add ~/.bin to $PATH
 export PATH=$PATH:~/.bin
+
+# how is this not set ..
+export EDITOR=vim
