@@ -86,12 +86,16 @@ endif
 
 
 " Ruby {
-  au BufNewFile,BufRead *.erb              setf eruby
+  au BufRead,BufNewFile *.erb              setf eruby
   au BufRead,BufNewFile *.rb,*.rhtml,*.erb set shiftwidth=2
   au BufRead,BufNewFile *.rb,*.rhtml,*.erb set softtabstop=2
-  au BufRead,BUfNewFile Gemfile            set filetype=Gemfile
+  au BufRead,BufNewFile Gemfile            set filetype=Gemfile
 " }
-"
+
+" Markdown {
+  au BufRead,BufNewFile *.md               set textwidth=80
+" }
+
 " Key mappings {
   let mapleader=","                         " remap leader from \ to ,
   map <leader>h :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
