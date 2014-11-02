@@ -138,11 +138,11 @@ map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
 
-imap <Tab> <C-P> " remap tab completion
+" remap tab completion
+imap <Tab> <C-P>
 
 " rails test shortcuts
-map <silent> ,tt :! rake test:units TEST=%<CR>
-map <silent> ,ft :! rake test:functionals TEST=%<CR>
+map <silent> ,tt :! rake test TEST=%<CR>
 
 
 " Load any machin-local settings
