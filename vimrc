@@ -57,7 +57,7 @@ endif
     highlight LineNr ctermfg=8 ctermbg=234
     highlight StatusLine ctermbg=231 ctermfg=236
     highlight CursorLine cterm=NONE ctermbg=235
-    colorscheme jellybeans
+    colorscheme paperdark "old: jellybeans
     if exists('+colorcolumn')
       set colorcolumn=81
     end
@@ -94,6 +94,7 @@ endif
 
 " Markdown {
   au BufRead,BufNewFile *.md               set textwidth=80
+  let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 " }
 
 " Key mappings {
@@ -108,11 +109,6 @@ endif
 " set nowrap         " switch wrap off for everything
 " set splitright    " new vert splits show up on the rhs
 
-" NERDTree tweaks {
-  "let NERDTreeQuitOnOpen = 1                        " Close the tree view when we open a file
-  "autocmd vimenter * if !argc() | NERDTree | endif  " open NERDTree if no files were specified
-  nmap <silent> ,nt :NERDTreeToggle \| :silent NERDTreeMirror<CR>
-" }
 
 " Gist.vim settings {
   let g:gist_detect_filetype = 1                           " set filetype automatically

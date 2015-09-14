@@ -1,4 +1,5 @@
 # *nix aliases
 alias ll="ls -l"
 alias la="ls -a"
+alias ls="ls --color=auto"
 

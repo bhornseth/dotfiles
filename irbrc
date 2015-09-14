@@ -14,6 +14,6 @@ IRB.conf[:AUTO_INDENT]  = true
   end
 end
 
-if defined?(SparkApi)
+if defined?(SparkApi) && !defined?(Rails)
   include SparkApi::Models
 end

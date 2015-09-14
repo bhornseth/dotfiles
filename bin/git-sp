@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+# git-sp - shorthand git status with files changed
+git log --pretty=format:"[%h] %ae, %ar: %s" --stat
