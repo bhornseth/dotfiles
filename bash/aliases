@@ -2,4 +2,8 @@
 alias ll="ls -l"
 alias la="ls -a"
 alias ls="ls --color=auto"
-
+alias weather="curl wttr.in/~Fargo?0"
+alias gs="git st"
+alias gd="git diff"
+alias gds="git diff --staged"
+alias ga="git add"

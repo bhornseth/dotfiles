@@ -138,7 +138,7 @@ map <C-h> <C-w><Left>
 imap <Tab> <C-P>
 
 " rails test shortcuts
-map <silent> ,tt :! rake test TEST=%<CR>
+map <silent> ,tt :! bin/rake test TEST=%<CR>
 
 
 " Load any machin-local settings
