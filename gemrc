@@ -1,8 +1,8 @@
 --- 
-backtrace: false
-benchmark: false
-update_sources: true
-verbose: true
-gem: --no-ri --no-rdoc
-install: --no-rdoc --no-ri
-update:  --no-rdoc --no-ri
+:backtrace: false
+:benchmark: false
+:update_sources: true
+:verbose: true
+gem: --no-rdoc
+install: --no-rdoc
+update:  --no-rdoc
