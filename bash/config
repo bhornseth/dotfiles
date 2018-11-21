@@ -27,3 +27,8 @@ export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
+
+# Keep more history and tag the entries with a date/time
+export HISTTIMEFORMAT="%Y/%m/%d %T "
+export HISTFILESIZE=1000000
+export HISTSIZE=1000000
