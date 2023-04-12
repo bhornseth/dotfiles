@@ -94,7 +94,7 @@ endif
 
 " Markdown {
   au BufRead,BufNewFile *.md               set textwidth=80
-  let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+  let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 " }
 
 " Key mappings {
