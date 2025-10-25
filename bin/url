@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+PARTS = %i( scheme userinfo host port path query ).freeze
+require 'uri'
+require 'cgi'
+
+url_in = ARGV[0].freeze
+uri = URI.parse(url_in)
+
+
+puts "Original: #{url_in}"
+PARTS.each do |part|
+  if value = uri.send(part)
+    printf "%-8s: %s\n", part.capitalize, value
+  end
+end
+
+if uri.query
+  query_params = CGI.parse(uri.query)
+  
+  max_key_length = query_params.keys.map(&:length).max
+  query_params.each do |key, values|
+    printf "   %#{max_key_length}s: %s\n", key, values.join(', ')
+  end
+end
+
+
+
+
+
+
+# vi: syntax=ruby

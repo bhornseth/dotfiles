@@ -97,6 +97,13 @@ endif
   let g:markdown_fenced_languages = ['css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 " }
 
+
+" HCL {
+  autocmd BufNewFile,BufRead *.hcl    set filetype=hcl
+  autocmd BufNewFile,BufRead *.tf     set filetype=hcl
+  autocmd BufNewFile,BufRead *.tfvars set filetype=hcl
+" }
+
 " Key mappings {
   let mapleader=","                         " remap leader from \ to ,
   map <leader>h :set hls!<bar>set hls?<CR>  " toggle search highlighting on F5
