@@ -1,16 +1,28 @@
 #!/usr/bin/env ruby
 
+STANDARD_PORTS = [80, 443].freeze
 PARTS = %i( scheme userinfo host port path query ).freeze
 require 'uri'
 require 'cgi'
 
-url_in = ARGV[0].freeze
+url_in =
+  if ARGV.size == 1
+    ARGV.first
+  elsif !STDIN.tty?
+    STDIN.read
+  else
+    nil
+  end
 uri = URI.parse(url_in)
 
 
 puts "Original: #{url_in}"
+if uri.query
+  puts "Cleaned:  #{uri.scheme}://#{uri.host}#{uri.path}"
+end
 PARTS.each do |part|
   if value = uri.send(part)
+    next if part == :port && STANDARD_PORTS.include?(value)
     printf "%-8s: %s\n", part.capitalize, value
   end
 end
