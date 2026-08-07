@@ -1,0 +1,54 @@
+[user]
+  name  = Brandon Hornseth
+  email = bhornseth@gmail.com
+[github]
+  user = bhornseth
+[core]
+  editor       = nvim
+  excludesfile = ~/.config/git/ignore
+  hooksPath    = ~/.config/git/hooks
+[color]
+  status      = auto
+  branch      = auto
+  interactive = auto
+  diff        = auto
+[alias]
+  co                  = checkout
+  hist                = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  last                = show HEAD HEAD^
+  glg                 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg                  =  log -n50 --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
+  llg                 =  log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit 
+  fpl                 = push --force-with-lease
+  rw                  = commit --amend # reword
+  up                  = pull --rebase --prune
+  st                  = status --short --branch
+  lasttag             = for-each-ref --sort=-taggerdate --format=%(refname:short) refs/tags --count=1
+  pom                 = push origin master
+  ls                  = log --pretty=format:"%C(magenta)%h%Creset %s %C(cyan) [%cn] %Cred%d" --decorate
+  jk                  = reset --hard HEAD
+  ctag                = !sh .git/hooks/ctags
+  sp                  = log --pretty=format:"[%h] %ae, %ar: %s" --stat
+  contributions       = !git --no-pager shortlog -s -n
+  amend               = commit --amend -C HEAD
+  ll                  = log --pretty=format:"%C(magenta)%h %C(green)%ad%Creset - %s %C(cyan) [%cn] %Cred%d" --decorate --stat --date=short
+  undo                = reset --soft HEAD^
+  nuke-branch         = !f() { git branch -D "$1" && git push origin ":$1"; }; f
+  delete-local-merged = !f() { git branch -d $(git branch --merged | grep -v '^*'); }; f
+  churn               = !f() { git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "\t" $2}' | egrep -v '(VERSION|version.rb|CHANGELOG|Gemfile)'; }; f
+
+[apply]
+  whitespace = nowarn
+[init]
+  defaultBranch = main
+[push]
+  default = simple
+[merge]
+  tool          = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+[commit]
+  verbose = true
+[include]
+  path = ~/.gitconfig.local

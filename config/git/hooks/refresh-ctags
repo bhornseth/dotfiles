@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -u
+
+find_universal_ctags() {
+  local candidate
+  for candidate in \
+    "${CTAGS:-}" \
+    /opt/homebrew/bin/ctags \
+    /usr/local/bin/ctags \
+    "$(command -v ctags 2>/dev/null || true)"
+  do
+    [[ -n "$candidate" && -x "$candidate" ]] || continue
+    if "$candidate" --version 2>/dev/null | grep -qi "Universal Ctags"; then
+      printf '%s\n' "$candidate"
+      return 0
+    fi
+  done
+
+  return 1
+}
+
+generate_tags() {
+  local root="$1"
+  local ctags_bin
+
+  ctags_bin="$(find_universal_ctags)" || return 0
+
+  cd "$root" || return 0
+
+  "$ctags_bin" -R \
+    --exclude=.git \
+    --exclude=.bundle \
+    --exclude=.next \
+    --exclude=build \
+    --exclude=coverage \
+    --exclude=dist \
+    --exclude=log \
+    --exclude=node_modules \
+    --exclude=tags \
+    --exclude=target \
+    --exclude=tmp \
+    --exclude=vendor/bundle \
+    -f tags \
+    . \
+    >/dev/null 2>&1 || true
+}
+
+root="$(git rev-parse --show-toplevel 2>/dev/null)" || exit 0
+git_dir="$(git rev-parse --git-dir 2>/dev/null)" || exit 0
+
+(
+  cd "$root" || exit 0
+
+  lock="$git_dir/refresh-ctags.lock"
+  if mkdir "$lock" 2>/dev/null; then
+    trap 'rmdir "$lock"' EXIT
+    generate_tags "$root"
+  fi
+) &
+
+exit 0

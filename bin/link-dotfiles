@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+link() {
+  local src="$1"
+  local dst="$2"
+  if [[ ! -e "$src" ]]; then
+    echo "  Missing source: $src" >&2
+    return 1
+  fi
+  if [[ -e "$dst" && ! -L "$dst" ]]; then
+    echo "  Backing up $dst -> ${dst}.bak"
+    mv "$dst" "${dst}.bak"
+  fi
+  ln -sfn "$src" "$dst"
+  echo "  $dst -> $src"
+}
+
+# Find our parent directory
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+echo "==> Linking dotfiles..."
+link "$DOTFILES_DIR/zshrc" "$HOME/.zshrc"
+link "$DOTFILES_DIR/gitconfig" "$HOME/.gitconfig"
+link "$DOTFILES_DIR/vimrc" "$HOME/.vimrc"
+
+link "$DOTFILES_DIR/scripts/bin" "$HOME/.bin"
+
+mkdir -p "$HOME/.config"
+link "$DOTFILES_DIR/config/git" "$HOME/.config/git"
+link "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
+link "$DOTFILES_DIR/config/ghostty" "$HOME/.config/ghostty"

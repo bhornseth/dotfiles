@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+STANDARD_PORTS = [80, 443].freeze
+PARTS = %i( scheme userinfo host port path query ).freeze
+require 'uri'
+require 'cgi'
+require 'net/http'
+
+
+url_in = if ARGV.length.zero?
+           $stdin.read.strip
+         else
+           ARGV[0].freeze
+         end
+uri = URI.parse(url_in)
+
+
+request = Net::HTTP::Get.new(uri)
+response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
+  http.request(request)
+end
+
+if response.is_a?(Net::HTTPRedirection)
+  puts "#{response['location']}"
+else
+  $stderr.puts "Unexpected response code: #{response.code}"
+  exit 1
+end
+
+
+
+
+
+# vi: syntax=ruby

@@ -1,0 +1,7 @@
+theme = Chester
+window-padding-x = 8
+window-padding-y = 4
+macos-titlebar-style = tabs
+font-family = Monaco
+term = xterm-256color
+gtk-single-instance = true

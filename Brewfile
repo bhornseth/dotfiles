@@ -1,0 +1,8 @@
+brew "gh"
+brew "jq"
+brew "yq"
+brew "ripgrep"
+brew "neovim"
+brew "universal-ctags"
+brew "rbenv"
+cask "1password-cli"

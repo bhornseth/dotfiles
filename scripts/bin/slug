@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+# Generate Heroku-style slugs
+# Example output: ancient-forest-7x4k, crimson-wave-2p9m
+
+ADJECTIVES = %w[
+  autumn hidden bitter misty silent empty dry dark summer icy delicate quiet
+  white cool spring winter patient twilight dawn crimson wispy weathered blue
+  billowing broken cold damp falling frosty green long late lingering bold
+  little morning muddy old red rough still small sparkling throbbing shy
+  wandering withered wild black young holy solitary fragrant aged snowy proud
+  floral restless divine polished ancient purple lively nameless lucky odd tiny
+  free dry yellow orange gentle shiny steep
+]
+
+NOUNS = %w[
+  waterfall river breeze moon rain wind sea morning snow lake sunset pine
+  shadow leaf dawn glitter forest hill cloud meadow sun glade bird brook
+  butterfly bush dew dust field fire flower firefly feather grass haze mountain
+  night pond darkness snowflake silence sound sky shape surf thunder violet
+  water wildflower wave water resonance sun wood dream cherry tree fog frost
+  voice paper frog smoke star canyon reef lagoon tide peak
+]
+
+# Generate random alphanumeric suffix
+def generate_suffix length = 4
+  # Excluded similar looking chars: i, l, o
+  chars = '0123456789abcdefghjkmnpqrstuvwxyz'
+  length.times.map { chars[rand(chars.length)] }.join
+end
+
+# Generate a single slug
+def generate_slug
+  adj = ADJECTIVES.sample
+  noun = NOUNS.sample
+  suffix = generate_suffix
+  
+  "#{adj}-#{noun}-#{suffix}"
+end
+
+puts generate_slug
+
+# vi: ft=ruby

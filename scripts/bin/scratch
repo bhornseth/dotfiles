@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+set -u
+set -o pipefail
+
+EDITOR=vim
+file="$(mktemp)"
+echo "Editing $file"
+exec "$EDITOR" "$file"
+
+# vi: syntax=bash
