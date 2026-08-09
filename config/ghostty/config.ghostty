@@ -5,3 +5,5 @@ macos-titlebar-style = tabs
 font-family = Monaco
 term = xterm-256color
 gtk-single-instance = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = false

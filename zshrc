@@ -29,7 +29,7 @@ compinit
 # ---------------------------------------
 # Autocomplete directories in ~/src
 s() {
-  builtin cd -- "$HOME/src/${1:?directory name required}"
+  builtin cd -- "$HOME/src/${1:-}"
 }
 
 autoload -Uz compinit
