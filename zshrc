@@ -1,11 +1,12 @@
-export CLICOLOR=1
-
 # Prevent problems with $PATH prepend if double-sourced
 typeset -U path
+
+export CLICOLOR=1
 
 # ---------------------------------------
 # Toolchain environment
 if [[ -x /opt/homebrew/bin/brew ]]; then
+  # Set PATH, MANPATH, etc., for Homebrew.
   eval "$(/opt/homebrew/bin/brew shellenv)"
 elif [[ -x /usr/local/bin/brew ]]; then
   eval "$(/usr/local/bin/brew shellenv)"
@@ -94,3 +95,7 @@ genpass() {
   local length=${1:-20}
   LC_ALL=C tr -dc "23456789abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ" < /dev/urandom | head -c $length ; echo
 }
+
+if [[ -e $HOME/.zshrc-local ]]; then
+    source $HOME/.zshrc-local
+fi
