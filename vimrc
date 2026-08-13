@@ -61,6 +61,15 @@ set statusline=[%02n]\ %t\ %y%m\ %=%l,%c/%L
 
 " Text formatting
 set expandtab
+" Do not allow filetype plugins, modelines, or Neovim's built-in EditorConfig
+" support to switch buffers back to hard tabs. Reindent commands like gg=G use
+" the buffer-local 'expandtab' value when constructing indentation.
+augroup dotfiles_no_hard_tabs
+  autocmd!
+  autocmd BufEnter,BufWinEnter,FileType * setlocal expandtab
+  autocmd OptionSet expandtab if v:option_new ==# '0' | setlocal expandtab shiftwidth=2 softtabstop=2 | endif
+  autocmd OptionSet shiftwidth,softtabstop if v:option_new ==# '0' | setlocal shiftwidth=2 softtabstop=2 | endif
+augroup END
 " LOOK TWICE: A global two-space default is convenient for Ruby/YAML/etc, but
 " filetype-specific settings may be better once the Neovim config grows.
 set shiftwidth=2
