@@ -7,6 +7,7 @@ brew "universal-ctags"
 brew "rbenv"
 brew "ruby-build"
 brew "tmux"
+brew "pi-coding-agent"
 
 brew "awscli"
 brew "opentofu"
