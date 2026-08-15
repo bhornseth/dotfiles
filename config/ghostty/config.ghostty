@@ -1,9 +1,9 @@
 theme = Chester
 window-padding-x = 8
 window-padding-y = 4
-macos-titlebar-style = tabs
+macos-titlebar-style = native
 font-family = Monaco
 term = xterm-256color
 gtk-single-instance = true
 window-inherit-working-directory = false
-tab-inherit-working-directory = false
+tab-inherit-working-directory = true
