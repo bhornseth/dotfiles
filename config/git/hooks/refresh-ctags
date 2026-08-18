@@ -40,7 +40,7 @@ generate_tags() {
     --exclude=target \
     --exclude=tmp \
     --exclude=vendor/bundle \
-    -f tags \
+    -f .tags \
     . \
     >/dev/null 2>&1 || true
 }

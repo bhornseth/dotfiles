@@ -28,7 +28,7 @@ set nobackup
 
 " Tags
 " Search for project tags from the current file upward, then from Vim's cwd.
-set tags=./tags;,tags
+set tags=./.tags;,./tags;,tags
 
 " LOOK TWICE: Neovim has good XDG defaults for swap files. Use a custom swap
 " directory only if it exists on every machine that uses these dotfiles.
