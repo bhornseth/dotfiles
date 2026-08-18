@@ -1,4 +1,5 @@
 brew "gh"
+brew "tig"
 brew "jq"
 brew "yq"
 brew "ripgrep"
