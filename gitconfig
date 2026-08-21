@@ -33,9 +33,9 @@
   amend               = commit --amend -C HEAD
   ll                  = log --pretty=format:"%C(magenta)%h %C(green)%ad%Creset - %s %C(cyan) [%cn] %Cred%d" --decorate --stat --date=short
   undo                = reset --soft HEAD^
-  nuke-branch         = !f() { git branch -D "$1" && git push origin ":$1"; }; f
-  delete-local-merged = !f() { git branch -d $(git branch --merged | grep -v '^*'); }; f
-  churn               = !f() { git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print "count\tfile"} {print $1 "\t" $2}' | egrep -v '(VERSION|version.rb|CHANGELOG|Gemfile)'; }; f
+  nuke-branch         = "!f() { git branch -D \"$1\" && git push origin \":$1\"; }; f"
+  delete-local-merged = "!current=$(git branch --show-current); git for-each-ref --format='%(refname:short)' refs/heads --merged | grep -vx \"$current\" | while IFS= read -r branch; do git branch -d \"$branch\"; done"
+  churn               = "!f() { git log --all -M -C --name-only --format='format:' \"$@\" | sort | grep -v '^$' | uniq -c | sort -n | awk 'BEGIN {print \"count\\tfile\"} {print $1 \"\\t\" $2}' | grep -Ev '(VERSION|version.rb|CHANGELOG|Gemfile)'; }; f"
 
 [apply]
   whitespace = nowarn
