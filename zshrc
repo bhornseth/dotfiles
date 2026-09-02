@@ -50,7 +50,11 @@ compdef _s s
 # Git info in shell prompt
 autoload -Uz vcs_info
 precmd() { vcs_info }
+
+# Normal branch name, plus a short action label during rebase/merge/cherry-pick.
 zstyle ':vcs_info:git:*' formats '%F{magenta}(%b)%f '
+zstyle ':vcs_info:git:*' actionformats '%F{magenta}(%b|%a)%f '
+
 setopt prompt_subst
 PROMPT='%F{green}%n@%m%f ${vcs_info_msg_0_}%F{blue}%~%f %F{cyan}$%f '
 
@@ -64,6 +68,7 @@ alias ls='ls -G'
 alias ga="git add"
 alias gs="git status"
 alias gd="git diff"
+alias gba="git branch -a"
 alias tf="terraform"
 alias tempe='cd "$(mktemp -d)"'
 alias wx='curl "https://wttr.in/Fort%20Collins?u0"'

@@ -46,3 +46,6 @@ require("lazy").setup({
     enabled = false,
   },
 })
+
+-- conceal markdown syntax 
+vim.opt.conceallevel = 2
